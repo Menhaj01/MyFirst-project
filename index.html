@@ -3,50 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roll Dice</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,600"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script type="module" src="./challenges.js"></script>
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="./second-style.css" />
+    <script type="module" src="./script.js"></script>
   </head>
   <body>
-    <div class="wrapper clearfix">
-      <div class="player-0-panel active">
-        <div class="player-name" id="name-0">Player 1</div>
-        <div class="player-score" id="score-0">43</div>
-        <div class="player-current-box">
-          <div class="player-current-label">Current</div>
-          <div class="player-current-score" id="current-0">11</div>
-        </div>
-      </div>
-      <div class="player-1-panel">
-        <div class="player-name" id="name-1">Player 2</div>
-        <div class="player-score" id="score-1">72</div>
-        <div class="player-current-box">
-          <div class="player-current-label">Current</div>
-          <div class="player-current-score" id="current-1">0</div>
-        </div>
-      </div>
-      <button class="btn-new">
-        <i class="ion-ios-plus-outline"></i>New game
-      </button>
-      <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-      <button class="btn-hold">
-        <i class="ion-ios-download-outline"></i>Hold
-      </button>
+    <h1>DICE GAME</h1>
+    <section id="container">
+      <a class="buttons" href="./second.html">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        START
+      </a>
+      <a data-modal-target="#modal" class="buttons" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        GAME RULES
+      </a>
+    </section>
 
-      <input type="text" id="winningScore" placeholder="Final score" />
-
-      <img src="./imgs/dice-5.png" alt="Dice" class="dice" id="dice1" />
-      <img src="./imgs/dice-5.png" alt="Dice" class="dice" id="dice2" />
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">DICE GAME</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        The game has two players playing in rounds. <br />
+        In each turn player rolls a dice as many times as he wishes. <br />
+        Each result get added to his round score but
+        <span class="first-span"
+          >if the player rolls a 1 all his round score get lost.</span
+        >
+        After that, its the next player turn. The player <br />
+        can chouse <span class="second">HOLD</span> which means that his round
+        score add to his <span class="second">GLOBLE</span> <br />
+        score.
+        <span class="winner"
+          >The first player to reach 100 points on
+          <span class="second">GLOBLE </span> score wins the game.</span
+        >
+      </div>
     </div>
+    <div id="overlay"></div>
   </body>
 </html>
